@@ -47,7 +47,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: build-linux
+        name: build-linux.tar.gz
         path: build-linux.tar.gz
 
   build-macos:
