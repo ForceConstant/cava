@@ -42,6 +42,13 @@ jobs:
       run: gcc -o cavacore_test cavacore_test.o cava-cavacore.o -lm -lfftw3
     - name: run cavacore test application
       run: ./cavacore_test
+    - name: Package built files
+      run: tar -czf build-linux.tar.gz ./*
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-linux
+        path: build-linux.tar.gz
 
   build-macos:
     runs-on: macos-latest
